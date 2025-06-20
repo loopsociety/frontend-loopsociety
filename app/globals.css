@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-green-400/20;
+  }
+
+  body {
+    font-family: "Courier New", Courier, "Ubuntu Mono", "Consolas", monospace;
+    background-color: #000000;
+    color: #00ff00;
+  }
+
+  /* Terminal cursor blink animation */
+  .cursor-blink::after {
+    content: "█";
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ASCII art styling */
+  .ascii-art {
+    line-height: 1;
+    white-space: pre;
+  }
+
+  /* Terminal input styling */
+  .terminal-input {
+    background: transparent;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: inherit;
+  }
+
+  .terminal-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00ff00;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+  }
+
+  /* Glitch effect */
+  .glitch {
+    animation: glitch 0.3s infinite;
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  /* Matrix rain effect */
+  .matrix-rain {
+    animation: matrixRain 2s linear infinite;
+  }
+
+  @keyframes matrixRain {
+    0% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+}
